@@ -1,0 +1,74 @@
+:root{
+    --rotatant: 0deg;
+}
+
+/* for sun-img */
+@keyframes rotation{
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(var(--rotatant));
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+@keyframes comeIn{
+    0% {
+        left: 0;
+    }
+    50% {
+        left: 95px;
+    }
+    100% {
+        left: 0px;
+    }
+}
+
+/* for text */
+@keyframes make_visible {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 100;
+    }
+}
+
+body{
+    margin: 0;
+    color: rgb(95, 95, 95);
+    font-size: 35px;
+}
+.parent{
+    margin: 25px 30px;
+    display: flex;
+    align-items: center;
+    width: 150px;
+}
+
+.sun{
+    --rotatant: -120deg;
+
+    height: 55px;
+    z-index: 1;
+    position: relative;
+    transition: all ease-in-out 1s;
+    
+    animation: rotation 5s infinite;
+}
+.loading_sun{
+    --rotatant: 370deg;
+    animation: comeIn 5s infinite, rotation 5s infinite;
+}
+
+.text{
+    /* initial opacity must be zero */
+    opacity: 0;
+}
+.visible_text{
+    padding-left: 0.5em;
+    animation: make_visible 2s;
+    animation-fill-mode: forwards
+}
