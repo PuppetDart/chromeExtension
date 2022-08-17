@@ -19,7 +19,7 @@
         left: 0;
     }
     50% {
-        left: 95px;
+        left: 100px;
     }
     100% {
         left: 0px;
@@ -45,7 +45,7 @@ body{
     margin: 25px 30px;
     display: flex;
     align-items: center;
-    width: 150px;
+    width: 160px;
 }
 
 .sun{
@@ -56,19 +56,25 @@ body{
     position: relative;
     transition: all ease-in-out 1s;
     
-    animation: rotation 5s infinite;
+    animation: rotation 3s infinite;
 }
 .loading_sun{
-    --rotatant: 370deg;
-    animation: comeIn 5s infinite, rotation 5s infinite;
+    --rotatant: 240deg;
+    animation: comeIn 3s infinite, rotation 3s infinite;
 }
 
 .text{
     /* initial opacity must be zero */
     opacity: 0;
+    -webkit-user-select: none;
+    user-select: none;
 }
 .visible_text{
     padding-left: 0.5em;
     animation: make_visible 2s;
     animation-fill-mode: forwards
+}
+.location{
+    margin: 0 -5px -5px 2px;
+    font-size: 14px;
 }
